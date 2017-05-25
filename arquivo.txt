@@ -1,150 +1,150 @@
-P1  3 E10 E20 E1  E27 E3
-P2  2 E10 E20 E2  E27 E5
-P3  2 E10 E20 E3  E27 E7
-P4  2 E10 E20 E4  E27 E9
-P5  3 E10 E20 E5  E27 E11
-P6  2 E10 E5  E6  E27 E13
-P7  2 E10 E5  E7  E37 E15
-P8  2 E10 E5  E8  E35 E17
-P9 	2 E10 E5  E9  E35 E21
-P10 3 E10 E5  E10 E35 E23
-P11 2 E20 E30 E11 E35 E25
-P12 2 E20 E30 E12 E35 E27
-P13 2 E20 E30 E13 E35 E29
-P14 2 E20 E30 E14 E48 E31
-P15 3 E20 E30 E15 E48 E33
-P16 2 E20 E35 E16 E48 E35
-P17 2 E20 E35 E17 E48 E37
-P18 2 E20 E35 E18 E48 E39
-P19 2 E20 E35 E19 E10 E41
-P20 3 E20 E35 E20 E10 E43
-P21 1 E30 E40 E21 E10 E45
-P22 2 E30 E40 E22 E10 E47
-P23 2 E30 E40 E23 E10 E49
-P24 2 E30 E40 E24 E10 E2
-P25 3 E30 E40 E25 E10 E4
-P26 2 E30 E45 E26 E23 E6
-P27 2 E30 E45 E27 E23 E8
-P28 2 E30 E45 E28 E23 E12
-P29 2 E30 E45 E29 E23 E14
-P30 3 E30 E45 E30 E31 E16
-P31 1 E40 E50 E31 E41 E18
-P32 2 E40 E50 E32 E31 E19
-P33 2 E40 E50 E33 E31 E22
-P34 2 E40 E50 E34 E31 E24
-P35 3 E40 E50 E35 E31 E26
-P36 2 E40 E50 E36 E21 E28
-P37 2 E40 E2  E37 E21 E32
-P38 2 E40 E2  E38 E21 E34
-P39 2 E40 E2  E39 E21 E36
-P40 3 E40 E2  E40 E11 E38
-P41 1 E40 E2  E41 E11 E42
-P42 2 E40 E4  E42 E11 E44
-P43 2 E40 E4  E43 E11 E46
-P44 2 E40 E4  E44 E11 E48
-P45 3 E40 E4  E45 E11 E5
-P46 2 E40 E4  E46 E11 E45
-P47 2 E40 E6  E47 E1  E45
-P48 2 E40 E6  E48 E1  E45
-P49 2 E40 E6  E49 E1  E45
-P50 3 E40 E6  E50 E1  E45
-P51 1 E50 E6  E49 E1  E45
-P52 2 E49 E8  E48 E1  E45
-P53 2 E48 E8  E47 E1  E45
-P54 2 E47 E8  E46 E1  E45
-P55 3 E46 E8  E45 E1  E45
-P56 2 E45 E8  E44 E2  E25
-P57 2 E44 E8  E43 E3  E25
-P58 2 E43 E8  E42 E4  E25
-P59 2 E42 E8  E41 E5  E25
-P60 3 E41 E8  E40 E6  E25
-P61 1 E40 E8  E4  E7  E15
-P62 2 E39 E12 E14 E9  E15
-P63 2 E38 E12 E24 E10 E15
-P64 2 E37 E12 E34 E11 E15
-P65 3 E36 E12 E14 E13 E15
-P66 2 E35 E12 E4  E14 E15
-P67 2 E34 E12 E24 E16 E15
-P68 2 E33 E12 E34 E17 E15
-P69 2 E32 E12 E44 E18 E15
-P70 3 E31 E12 E1  E19 E15
-P71 1 E30 E12 E1  E20 E35
-P72 2 E29 E12 E1  E21 E35
-P73 2 E28 E13 E7  E22 E35
-P74 2 E27 E13 E7  E23 E35
-P75 3 E26 E13 E7  E24 E35
-P76 2 E25 E13 E7  E25 E35
-P77 2 E24 E13 E7  E26 E35
-P78 2 E23 E13 E47 E27 E35
-P79 2 E22 E27 E47 E28 E35
-P80 3 E21 E27 E47 E29 E35
-P81 1 E20 E27 E34 E30 E11
-P82 2 E19 E27 E34 E31 E20
-P83 2 E18 E27 E3  E32 E20
-P84 2 E17 E44 E3  E33 E20
-P85 3 E16 E44 E3  E34 E20
-P86 2 E15 E44 E3  E35 E20
-P87 2 E14 E44 E4  E36 E20
-P88 2 E13 E44 E4  E37 E20
-P89 2 E12 E44 E4  E38 E20
-P90 3 E11 E44 E4  E39 E20
-P91 1 E10 E47 E4  E40 E1
-P92 2 E9  E47 E4  E41 E1
-P93 2 E8  E47 E4  E42 E1
-P94 2 E7  E47 E4  E43 E1
-P95 3 E6  E47 E4  E44 E1
-P96 2 E5  E47 E4  E45 E1
-P97 2 E4  E47 E4  E46 E1
-P98 2 E3  E47 E4  E48 E1
-P99 2 E2  E47 E4  E49 E1
-P100 3 E1 E47 E4  E50 E10
-E1  1
-E2  1
-E3  1
-E4  1
-E5  1
-E6  1
-E7  1
-E8  1
-E9  1
-E10 1
-E11 3
-E12 3
-E13 3
-E14 3
-E15 3
-E16 3
-E17 3
-E18 3
-E19 3
-E20 3
-E21 3
-E22 3
-E23 3
-E24 3
-E25 3
-E26 3
-E27 3
-E28 3
-E29 3
-E30 3
-E31 2
-E32 2
-E33 2
-E34 2
-E35 2
-E36 2
-E37 2
-E38 2
-E39 2
-E40 2
-E41 2
-E42 2
-E43 2
-E44 2
-E45 2
-E46 2
-E47 2
-E48 2
-E49 2
-E50 2
+Professores: 1  Habilitacoes: 3 Escolas: 10 20 1  27 3
+Professores: 2  Habilitacoes: 2 Escolas: 10 20 2  27 5
+Professores: 3  Habilitacoes: 2 Escolas: 10 20 3  27 7
+Professores: 4  Habilitacoes: 2 Escolas: 10 20 4  27 9
+Professores: 5  Habilitacoes: 3 Escolas: 10 20 5  27 11
+Professores: 6  Habilitacoes: 2 Escolas: 10 5  6  27 13
+Professores: 7  Habilitacoes: 2 Escolas: 10 5  7  37 15
+Professores: 8  Habilitacoes: 2 Escolas: 10 5  8  35 17
+Professores: 9  Habilitacoes: 2 Escolas: 10 5  9  35 21
+Professores: 10 Habilitacoes: 3 Escolas: 10 5  10 35 23
+Professores: 11 Habilitacoes: 2 Escolas: 20 30 11 35 25
+Professores: 12 Habilitacoes: 2 Escolas: 20 30 12 35 27
+Professores: 13 Habilitacoes: 2 Escolas: 20 30 13 35 29
+Professores: 14 Habilitacoes: 2 Escolas: 20 30 14 48 31
+Professores: 15 Habilitacoes: 3 Escolas: 20 30 15 48 33
+Professores: 16 Habilitacoes: 2 Escolas: 20 35 16 48 35
+Professores: 17 Habilitacoes: 2 Escolas: 20 35 17 48 7
+Professores: 18 Habilitacoes: 2 Escolas: 20 35 18 48 9
+Professores: 19 Habilitacoes: 2 Escolas: 20 35 19 10 41
+Professores: 20 Habilitacoes: 3 Escolas: 20 35 20 10 43
+Professores: 21 Habilitacoes: 1 Escolas: 30 40 21 10 45
+Professores: 22 Habilitacoes: 2 Escolas: 30 40 22 10 47
+Professores: 23 Habilitacoes: 2 Escolas: 30 40 23 10 49
+Professores: 24 Habilitacoes: 2 Escolas: 30 40 24 10 2
+Professores: 25 Habilitacoes: 3 Escolas: 30 40 25 10 4
+Professores: 26 Habilitacoes: 2 Escolas: 30 45 26 23 6
+Professores: 27 Habilitacoes: 2 Escolas: 30 45 27 23 8
+Professores: 28 Habilitacoes: 2 Escolas: 30 45 28 23 12
+Professores: 29 Habilitacoes: 2 Escolas: 30 45 29 23 14
+Professores: 30 Habilitacoes: 3 Escolas: 30 45 30 31 16
+Professores: 31 Habilitacoes: 1 Escolas: 40 50 31 41 18
+Professores: 32 Habilitacoes: 2 Escolas: 40 50 32 31 19
+Professores: 33 Habilitacoes: 2 Escolas: 40 50 33 31 22
+Professores: 34 Habilitacoes: 2 Escolas: 40 50 34 31 24
+Professores: 35 Habilitacoes: 3 Escolas: 40 50 35 31 26
+Professores: 36 Habilitacoes: 2 Escolas: 40 50 36 21 28
+Professores: 37 Habilitacoes: 2 Escolas: 40 2  37 21 32
+Professores: 38 Habilitacoes: 2 Escolas: 40 2  38 21 34
+Professores: 39 Habilitacoes: 2 Escolas: 40 2  39 21 36
+Professores: 40 Habilitacoes: 3 Escolas: 40 2  40 11 38
+Professores: 41 Habilitacoes: 1 Escolas: 40 2  41 11 42
+Professores: 42 Habilitacoes: 2 Escolas: 40 4  42 11 44
+Professores: 43 Habilitacoes: 2 Escolas: 40 4  43 11 46
+Professores: 44 Habilitacoes: 2 Escolas: 40 4  44 11 48
+Professores: 45 Habilitacoes: 3 Escolas: 40 4  45 11 5
+Professores: 46 Habilitacoes: 2 Escolas: 40 4  46 11 45
+Professores: 47 Habilitacoes: 2 Escolas: 40 6  47 1  45
+Professores: 48 Habilitacoes: 2 Escolas: 40 6  48 1  45
+Professores: 49 Habilitacoes: 2 Escolas: 40 6  49 1  45
+Professores: 50 Habilitacoes: 3 Escolas: 40 6  50 1  45
+Professores: 51 Habilitacoes: 1 Escolas: 50 6  49 1  45
+Professores: 52 Habilitacoes: 2 Escolas: 49 8  48 1  45
+Professores: 53 Habilitacoes: 2 Escolas: 48 8  47 1  45
+Professores: 54 Habilitacoes: 2 Escolas: 47 8  46 1  45
+Professores: 55 Habilitacoes: 3 Escolas: 46 8  45 1  45
+Professores: 56 Habilitacoes: 2 Escolas: 45 8  44 2  25
+Professores: 57 Habilitacoes: 2 Escolas: 44 8  43 3  25
+Professores: 58 Habilitacoes: 2 Escolas: 43 8  42 4  25
+Professores: 59 Habilitacoes: 2 Escolas: 42 8  41 5  25
+Professores: 60 Habilitacoes: 3 Escolas: 41 8  40 6  25
+Professores: 61 Habilitacoes: 1 Escolas: 40 8  4  7  15
+Professores: 62 Habilitacoes: 2 Escolas: 39 12 14 9  5
+Professores: 63 Habilitacoes: 2 Escolas: 38 12 24 10 15
+Professores: 64 Habilitacoes: 2 Escolas: 37 12 34 11 15
+Professores: 65 Habilitacoes: 3 Escolas: 36 12 14 13 15
+Professores: 66 Habilitacoes: 2 Escolas: 35 12 4  14 15
+Professores: 67 Habilitacoes: 2 Escolas: 34 12 24 16 15
+Professores: 68 Habilitacoes: 2 Escolas: 33 12 34 17 15
+Professores: 69 Habilitacoes: 2 Escolas: 32 12 44 18 15
+Professores: 70 Habilitacoes: 3 Escolas: 31 12 1  19 15
+Professores: 71 Habilitacoes: 1 Escolas: 30 12 1  20 35
+Professores: 72 Habilitacoes: 2 Escolas: 29 12 1  21 35
+Professores: 73 Habilitacoes: 2 Escolas: 28 13 7  22 35
+Professores: 74 Habilitacoes: 2 Escolas: 27 13 7  23 35
+Professores: 75 Habilitacoes: 3 Escolas: 26 13 7  24 35
+Professores: 76 Habilitacoes: 2 Escolas: 25 13 7  25 35
+Professores: 77 Habilitacoes: 2 Escolas: 24 13 7  26 35
+Professores: 78 Habilitacoes: 2 Escolas: 23 13 47 27 35
+Professores: 79 Habilitacoes: 2 Escolas: 22 27 47 28 35
+Professores: 80 Habilitacoes: 3 Escolas: 21 27 47 29 35
+Professores: 81 Habilitacoes: 1 Escolas: 20 27 34 30 11
+Professores: 82 Habilitacoes: 2 Escolas: 19 27 34 31 20
+Professores: 83 Habilitacoes: 2 Escolas: 18 27 3  32 20
+Professores: 84 Habilitacoes: 2 Escolas: 17 44 3  33 20
+Professores: 85 Habilitacoes: 3 Escolas: 16 44 3  34 20
+Professores: 86 Habilitacoes: 2 Escolas: 15 44 3  35 20
+Professores: 87 Habilitacoes: 2 Escolas: 14 44 4  36 20
+Professores: 88 Habilitacoes: 2 Escolas: 13 44 4  37 20
+Professores: 89 Habilitacoes: 2 Escolas: 12 44 4  38 20
+Professores: 90 Habilitacoes: 3 Escolas: 11 44 4  39 20
+Professores: 91 Habilitacoes: 1 Escolas: 10 47 4  40 1
+Professores: 92 Habilitacoes: 2 Escolas: 9  47 4  41 1
+Professores: 93 Habilitacoes: 2 Escolas: 8  47 4  42 1
+Professores: 94 Habilitacoes: 2 Escolas: 7  47 4  43 1
+Professores: 95 Habilitacoes: 3 Escolas: 6  47 4  44 1
+Professores: 96 Habilitacoes: 2 Escolas: 5  47 4  5  1
+Professores: 97 Habilitacoes: 2 Escolas: 4  47 4  46 1
+Professores: 98 Habilitacoes: 2 Escolas: 3  47 4  48 1
+Professores: 99 Habilitacoes: 2 Escolas: 2  47 4  49 1
+Professores: 100 Habilitacoes:  3 Escolas: 1 47 4  50 10
+Escolas: 1  Habilitacoes.Requeridas: 1
+Escolas: 2  Habilitacoes.Requeridas: 1
+Escolas: 3  Habilitacoes.Requeridas: 1
+Escolas: 4  Habilitacoes.Requeridas: 1
+Escolas: 5  Habilitacoes.Requeridas: 1
+Escolas: 6  Habilitacoes.Requeridas: 1
+Escolas: 7  Habilitacoes.Requeridas: 1
+Escolas: 8  Habilitacoes.Requeridas: 1
+Escolas: 9  Habilitacoes.Requeridas: 1
+Escolas: 10 Habilitacoes.Requeridas: 1
+Escolas: 11 Habilitacoes.Requeridas: 3
+Escolas: 12 Habilitacoes.Requeridas: 3
+Escolas: 13 Habilitacoes.Requeridas: 3
+Escolas: 14 Habilitacoes.Requeridas: 3
+Escolas: 15 Habilitacoes.Requeridas: 3
+Escolas: 16 Habilitacoes.Requeridas: 3
+Escolas: 17 Habilitacoes.Requeridas: 3
+Escolas: 18 Habilitacoes.Requeridas: 3
+Escolas: 19 Habilitacoes.Requeridas: 3
+Escolas: 20 Habilitacoes.Requeridas: 3
+Escolas: 21 Habilitacoes.Requeridas: 3
+Escolas: 22 Habilitacoes.Requeridas: 3
+Escolas: 23 Habilitacoes.Requeridas: 3
+Escolas: 24 Habilitacoes.Requeridas: 3
+Escolas: 25 Habilitacoes.Requeridas: 3
+Escolas: 26 Habilitacoes.Requeridas: 3
+Escolas: 27 Habilitacoes.Requeridas: 3
+Escolas: 28 Habilitacoes.Requeridas: 3
+Escolas: 29 Habilitacoes.Requeridas: 3
+Escolas: 30 Habilitacoes.Requeridas: 3
+Escolas: 31 Habilitacoes.Requeridas: 2
+Escolas: 32 Habilitacoes.Requeridas: 2
+Escolas: 33 Habilitacoes.Requeridas: 2
+Escolas: 34 Habilitacoes.Requeridas: 2
+Escolas: 35 Habilitacoes.Requeridas: 2
+Escolas: 36 Habilitacoes.Requeridas: 2
+Escolas: 37 Habilitacoes.Requeridas: 2
+Escolas: 38 Habilitacoes.Requeridas: 2
+Escolas: 39 Habilitacoes.Requeridas: 2
+Escolas: 40 Habilitacoes.Requeridas: 2
+Escolas: 41 Habilitacoes.Requeridas: 2
+Escolas: 42 Habilitacoes.Requeridas: 2
+Escolas: 43 Habilitacoes.Requeridas: 2
+Escolas: 44 Habilitacoes.Requeridas: 2
+Escolas: 45 Habilitacoes.Requeridas: 2
+Escolas: 46 Habilitacoes.Requeridas: 2
+Escolas: 47 Habilitacoes.Requeridas: 2
+Escolas: 48 Habilitacoes.Requeridas: 2
+Escolas: 49 Habilitacoes.Requeridas: 2 
+Escolas: 50 Habilitacoes.Requeridas: 2

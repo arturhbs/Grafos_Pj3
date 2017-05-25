@@ -22,15 +22,17 @@ Descricao:	Projeto3
 using namespace std;
 typedef struct 
 {
-	string cod_professor;
+	int cod_professor;
 	int habilitacoes;
-	vector<string> escolas_prioridade; 
+	vector<int> escolas_prioridade; 
 }t_professor;
 
 typedef struct 
 {	
 	string cod_escola;
 	int habilitacoes_pretendidas;
+	vector<string> professores_possiveis;
+
 }t_escola;
 
 /*VARIAVEIS GLOBAIS =====================================================*/
@@ -39,16 +41,15 @@ t_escola escola[51];
 /*=======================================================================*/
 
 void leitura_arquivo(){
-	int j=0;
+	int j=0 , escola_leitura, i=0;
 	string line;
 	ifstream fp("arquivo.txt");
-	string escola_leitura;
-	int i =0;
+	string aux;/*Serve para pegar o que nao precisa no arquivo lido*/
 	while(!fp.eof()){
 		getline(fp, line);	/*pega uma linha inteira do .txt*/
 		stringstream is(line);/* 'is' passa a ser um tipo de leitura para a string no arquivo*/
 		if(i<100){ /*faz leitura até da centésima linha do arquivo*/
-			is >>  professor[i].cod_professor >> professor[i].habilitacoes;
+			is >> aux >>  professor[i].cod_professor >> aux >> professor[i].habilitacoes >> aux;		
 			while(is >> escola_leitura != NULL ){
 				professor[i].escolas_prioridade.push_back(escola_leitura);/*coloca em um vetor a lista de prioridades das escolas*/
 				cout << "escola = " << escola_leitura << endl;		
@@ -58,7 +59,7 @@ void leitura_arquivo(){
 			cout << " -------------" << endl;
 		}
 		else{
-			is >> escola[j].cod_escola >> escola[j].habilitacoes_pretendidas;
+			is >> aux >> escola[j].cod_escola >> aux >> escola[j].habilitacoes_pretendidas;
 			cout << "cod_escola = " <<  escola[j].cod_escola<< endl << "habilitacoes_pretendidas =  " << escola[j].habilitacoes_pretendidas << endl << "============" << endl; 
 			j++;
 		}

@@ -109,12 +109,12 @@ void emparelhamento(){
 			vector<int>::iterator aux_vetor = escola[num_escolaAtual].professores_possiveis.begin();
 			while(escola[num_escolaAtual].flag_escola > 0 && aux_vetor != escola[num_escolaAtual].professores_possiveis.end()){ /*ira percorrer todo o vetor de escolas*/ 
 				num_professor =*aux_vetor;															/*e verifica se ja tem os dois professores necessarios*/
-				if(professor[num_professor - 1].flag_professor != 2) {
+				if(professor[num_professor - 1].flag_professor != 2) {/*Se o professor estiver alocado em uma escola de sua lista nao entra no loop */
 					if(professor[num_professor - 1].flag_professor == 0){ /*Caso o professor ainda nao esteja alocado */
 						vector<int>::iterator it = professor[num_professor - 1].escolas_prioridade.begin();
 						while(it != professor[num_professor - 1].escolas_prioridade.end() ){ /*ira percorrer todo o vetor dos professores para ver se a escola está na lista dele*/
 							if(*it == escola[num_escolaAtual].cod_escola){
-								professor[num_professor - 1].flag_professor = 2;
+								professor[num_professor - 1].flag_professor = 2;/*Alocado em definitivo */
 								professor[num_professor - 1].escola_alocada = escola[num_escolaAtual].cod_escola;
 								escola[num_escolaAtual].flag_escola--;	
 								break;/*sai do while atual*/
@@ -122,7 +122,7 @@ void emparelhamento(){
 							it++;
 						}
 						if(professor[num_professor - 1].flag_professor == 0) {
-							professor[num_professor - 1].flag_professor = 1;
+							professor[num_professor - 1].flag_professor = 1;/*Alocado mas pode ser mudado */
 							professor[num_professor - 1].escola_alocada = escola[num_escolaAtual].cod_escola;
 							escola[num_escolaAtual].flag_escola--;	
 

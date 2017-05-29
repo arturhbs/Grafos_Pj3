@@ -103,7 +103,7 @@ void emparelhamento(){
 	vector<int> teacher;
 	vector<int> school;
 
-	while (profs_alocados != 78) { /*Para parar quando todos os professores forem alocados(ta bugado)*/
+	while (profs_alocados != 76) { /*Para parar quando todos os professores forem alocados(ta bugado)*/
 		for(num_escolaAtual=0;num_escolaAtual<50;num_escolaAtual++){ /*fazer um loop para todas as escolas*/
 
 			vector<int>::iterator aux_vetor = escola[num_escolaAtual].professores_possiveis.begin();
@@ -125,7 +125,7 @@ void emparelhamento(){
 							professor[num_professor - 1].flag_professor = 1;/*Alocado mas pode ser mudado */
 							professor[num_professor - 1].escola_alocada = escola[num_escolaAtual].cod_escola;
 							escola[num_escolaAtual].flag_escola--;	
-
+						}
 						profs_alocados++;
 						
 					}
@@ -215,4 +215,3 @@ int main(){
 	escreve_resultado();
 	return 0;
 }
-

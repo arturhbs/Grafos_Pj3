@@ -27,6 +27,7 @@ typedef struct
 	vector<int> escolas_prioridade;
 	int flag_professor; 
 	int escola_alocada;
+	int prioridade_alocada;
 
 }t_professor;
 
@@ -99,49 +100,58 @@ void emparelhamento(){
 	int num_escolaAtual;
 	int num_professor;/* mostra o numero do professor em que esta na lista do vetor das escolas*/
 	int num_antiga_escola;
+	int prioridade;
 	int profs_alocados = 0;
+	int achou;
 	vector<int> teacher;
 	vector<int> school;
 
-	while (profs_alocados != 76) { /*Para parar quando todos os professores forem alocados(ta bugado)*/
+	while (profs_alocados != 75) { /*Para parar quando todos os professores forem alocados(ta bugado)*/
 		for(num_escolaAtual=0;num_escolaAtual<50;num_escolaAtual++){ /*fazer um loop para todas as escolas*/
 
 			vector<int>::iterator aux_vetor = escola[num_escolaAtual].professores_possiveis.begin();
 			while(escola[num_escolaAtual].flag_escola > 0 && aux_vetor != escola[num_escolaAtual].professores_possiveis.end()){ /*ira percorrer todo o vetor de escolas*/ 
 				num_professor =*aux_vetor;															/*e verifica se ja tem os dois professores necessarios*/
-				if(professor[num_professor - 1].flag_professor != 2) {/*Se o professor estiver alocado em uma escola de sua lista nao entra no loop */
-					if(professor[num_professor - 1].flag_professor == 0){ /*Caso o professor ainda nao esteja alocado */
-						vector<int>::iterator it = professor[num_professor - 1].escolas_prioridade.begin();
-						while(it != professor[num_professor - 1].escolas_prioridade.end() ){ /*ira percorrer todo o vetor dos professores para ver se a escola está na lista dele*/
-							if(*it == escola[num_escolaAtual].cod_escola){
-								professor[num_professor - 1].flag_professor = 2;/*Alocado em definitivo */
-								professor[num_professor - 1].escola_alocada = escola[num_escolaAtual].cod_escola;
-								escola[num_escolaAtual].flag_escola--;	
-								break;/*sai do while atual*/
-							}
-							it++;
+				prioridade = 1;
+				if(professor[num_professor - 1].flag_professor == 0){ /*Caso o professor ainda nao esteja alocado */
+					vector<int>::iterator it = professor[num_professor - 1].escolas_prioridade.begin();
+					
+					professor[num_professor - 1].flag_professor = 1;/*Alocado mas pode ser mudado */
+					professor[num_professor - 1].escola_alocada = escola[num_escolaAtual].cod_escola;
+					escola[num_escolaAtual].flag_escola--;	
+					achou = 0;
+					while((it != professor[num_professor - 1].escolas_prioridade.end()) && (!achou) ){ /*ira percorrer todo o vetor dos professores para ver se a escola está na lista dele*/
+						if(*it == escola[num_escolaAtual].cod_escola){
+							professor[num_professor - 1].prioridade_alocada = prioridade;
+							achou = 1;
 						}
-						if(professor[num_professor - 1].flag_professor == 0) {
-							professor[num_professor - 1].flag_professor = 1;/*Alocado mas pode ser mudado */
-							professor[num_professor - 1].escola_alocada = escola[num_escolaAtual].cod_escola;
-							escola[num_escolaAtual].flag_escola--;	
-						}
-						profs_alocados++;
+						prioridade++;
+						it++;
+
 						
 					}
-					else { /*Caso o professor esteja alocado em uma escola que nao esta em sua lista */
-						vector<int>::iterator it = professor[num_professor - 1].escolas_prioridade.begin(); /*Caso a escola esteja alocada mas em uma escola nao prioritaria */
-						while(it != professor[num_professor - 1].escolas_prioridade.end() ){ /*ira percorrer todo o vetor dos professores para ver se a escola está na lista dele*/
-							if(*it == escola[num_escolaAtual].cod_escola){
-								professor[num_professor - 1].flag_professor = 2;
+					if (!achou) {
+						professor[num_professor - 1].prioridade_alocada = prioridade;
+					} 
+
+					profs_alocados++;
+					
+				}
+				else { /*Caso o professor esteja alocado em uma escola que nao esta em sua lista */
+					vector<int>::iterator it = professor[num_professor - 1].escolas_prioridade.begin(); /*Caso a escola esteja alocada mas em uma escola nao prioritaria */
+					while(it != professor[num_professor - 1].escolas_prioridade.end() ){ /*ira percorrer todo o vetor dos professores para ver se a escola está na lista dele*/
+						if(*it == escola[num_escolaAtual].cod_escola){
+							if(prioridade < professor[num_professor - 1].prioridade_alocada) {
 								num_antiga_escola = professor[num_professor - 1].escola_alocada;
-								escola[num_antiga_escola].flag_escola++; /*Abrindo uma vaga porque o professor foi realocado */
+								escola[num_antiga_escola - 1].flag_escola++; /*Abrindo uma vaga porque o professor foi realocado */
 								professor[num_professor - 1].escola_alocada = escola[num_escolaAtual].cod_escola;
+								professor[num_professor - 1].prioridade_alocada = prioridade;
 								escola[num_escolaAtual].flag_escola--;	
-								break;/*sai do while atual*/
 							}
-							it++;
+							
 						}
+						prioridade++;
+						it++;
 					}
 				}
 				aux_vetor++;
@@ -152,6 +162,8 @@ void emparelhamento(){
 	}
 
 }
+				
+				
 
 void escreve_resultado(){
 	int i;

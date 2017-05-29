@@ -24,23 +24,26 @@ typedef struct
 {
 	int cod_professor;
 	int habilitacoes;
-	vector<int> escolas_prioridade; 
+	vector<int> escolas_prioridade;
+	int flag_professor; 
+	int escola_alocada;
+
 }t_professor;
 
 typedef struct 
 {	
-	string cod_escola;
+	int cod_escola;
 	int habilitacoes_pretendidas;
-	vector<string> professores_possiveis;
+	vector<int> professores_possiveis;
+	int flag_escola;
 
 }t_escola;
 
 /*VARIAVEIS GLOBAIS =====================================================*/
 t_professor professor[101];
 t_escola escola[51];
-/*=======================================================================*/
-
-void leitura_arquivo(){
+/*=======================================================================*/ 
+void Fazer_grafo(){
 	int j=0 , escola_leitura, i=0;
 	string line;
 	ifstream fp("arquivo.txt");
@@ -52,20 +55,163 @@ void leitura_arquivo(){
 			is >> aux >>  professor[i].cod_professor >> aux >> professor[i].habilitacoes >> aux;		
 			while(is >> escola_leitura != NULL ){
 				professor[i].escolas_prioridade.push_back(escola_leitura);/*coloca em um vetor a lista de prioridades das escolas*/
-				cout << "escola = " << escola_leitura << endl;		
 			}
-			cout << "cod_professor == "<< professor[i].cod_professor <<endl << "habilitacoes == " <<  professor[i].habilitacoes<<endl;
 			i++;
-			cout << " -------------" << endl;
 		}
 		else{
 			is >> aux >> escola[j].cod_escola >> aux >> escola[j].habilitacoes_pretendidas;
-			cout << "cod_escola = " <<  escola[j].cod_escola<< endl << "habilitacoes_pretendidas =  " << escola[j].habilitacoes_pretendidas << endl << "============" << endl; 
+			switch (escola[j].habilitacoes_pretendidas) {	/*criar ligacoes direcionadas do grafo de escola para possiveis professores que poderiam aderir a escola*/
+				case 1 : 
+					for(int k=0; k<100;k++){
+						escola[j].professores_possiveis.push_back(k + 1); /*todos os professores serão possíveis*/
+					}
+					break;
+				case 2:
+					for(int k=0; k<100; k++){
+						if(professor[k].habilitacoes >=2){
+							escola[j].professores_possiveis.push_back(k + 1); /*todos os professores que tem 2 ou 3 habilitacoes*/
+						}
+					}
+					break;
+				case 3:
+					for(int k=0; k<100; k++){
+						if(professor[k].habilitacoes == 3){
+							escola[j].professores_possiveis.push_back(k + 1); /*todos os professores que 3 habilitacoes*/
+						}
+					}
+			}
 			j++;
 		}
-
 	}
 }
+void Inicilizar_Flags(){
+	int i;
+	for(i=0;i<100;i++){
+		professor[i].flag_professor =0;/*professor nao esta alocado em nenhuma escola ainda*/
+		professor[i].escola_alocada = 0; 
+	}
+	for(i=0;i<50;i++){
+		escola[i].flag_escola =2;/*inicializa a escola com duas vagas*/
+	}
+}
+
+void emparelhamento(){
+	int num_escolaAtual;
+	int num_professor;/* mostra o numero do professor em que esta na lista do vetor das escolas*/
+	int num_antiga_escola;
+	int profs_alocados = 0;
+	vector<int> teacher;
+	vector<int> school;
+
+	while (profs_alocados != 78) { /*Para parar quando todos os professores forem alocados(ta bugado)*/
+		for(num_escolaAtual=0;num_escolaAtual<50;num_escolaAtual++){ /*fazer um loop para todas as escolas*/
+
+			vector<int>::iterator aux_vetor = escola[num_escolaAtual].professores_possiveis.begin();
+			while(escola[num_escolaAtual].flag_escola > 0 && aux_vetor != escola[num_escolaAtual].professores_possiveis.end()){ /*ira percorrer todo o vetor de escolas*/ 
+				num_professor =*aux_vetor;															/*e verifica se ja tem os dois professores necessarios*/
+				if(professor[num_professor - 1].flag_professor != 2) {
+					if(professor[num_professor - 1].flag_professor == 0){ /*Caso o professor ainda nao esteja alocado */
+						vector<int>::iterator it = professor[num_professor - 1].escolas_prioridade.begin();
+						while(it != professor[num_professor - 1].escolas_prioridade.end() ){ /*ira percorrer todo o vetor dos professores para ver se a escola está na lista dele*/
+							if(*it == escola[num_escolaAtual].cod_escola){
+								professor[num_professor - 1].flag_professor = 2;
+								professor[num_professor - 1].escola_alocada = escola[num_escolaAtual].cod_escola;
+								escola[num_escolaAtual].flag_escola--;	
+								break;/*sai do while atual*/
+							}
+							it++;
+						}
+						if(professor[num_professor - 1].flag_professor == 0) {
+							professor[num_professor - 1].flag_professor = 1;
+							professor[num_professor - 1].escola_alocada = escola[num_escolaAtual].cod_escola;
+							escola[num_escolaAtual].flag_escola--;	
+
+						profs_alocados++;
+						
+					}
+					else { /*Caso o professor esteja alocado em uma escola que nao esta em sua lista */
+						vector<int>::iterator it = professor[num_professor - 1].escolas_prioridade.begin(); /*Caso a escola esteja alocada mas em uma escola nao prioritaria */
+						while(it != professor[num_professor - 1].escolas_prioridade.end() ){ /*ira percorrer todo o vetor dos professores para ver se a escola está na lista dele*/
+							if(*it == escola[num_escolaAtual].cod_escola){
+								professor[num_professor - 1].flag_professor = 2;
+								num_antiga_escola = professor[num_professor - 1].escola_alocada;
+								escola[num_antiga_escola].flag_escola++; /*Abrindo uma vaga porque o professor foi realocado */
+								professor[num_professor - 1].escola_alocada = escola[num_escolaAtual].cod_escola;
+								escola[num_escolaAtual].flag_escola--;	
+								break;/*sai do while atual*/
+							}
+							it++;
+						}
+					}
+				}
+				aux_vetor++;
+			}
+			cout << profs_alocados << " ";
+		}
+		
+	}
+
+}
+
+void escreve_resultado(){
+	int i;
+	
+	for(i=0;i<100;i++) {
+		cout << "Professor:" << professor[i].cod_professor << endl;
+		cout << "Escolas preferidas:";
+		vector<int>::iterator it = professor[i].escolas_prioridade.begin();
+		while(it != professor[i].escolas_prioridade.end() ) {
+			cout << " " <<*it;
+			it++;
+		}
+		cout << endl;
+		cout << "Escola alocada:" << professor[i].escola_alocada<< endl;
+		/*getchar();*/
+	}
+}
+void escreve_teste(){ /*Para ver quais escolas não alocaram ninguem */
+	int i;
+	
+	for(i=0;i<50;i++) {
+		cout << "Escola:" << escola[i].cod_escola << endl;
+		cout << "professores possiveis:";
+		vector<int>::iterator it = escola[i].professores_possiveis.begin();
+		while(it != escola[i].professores_possiveis.end() ) {
+			cout << " " <<*it;
+			it++;
+		}
+		cout << endl;
+		cout << "vagas:" << escola[i].flag_escola<< endl;
+		getchar();
+	}
+}
+
+/*Tentativa de fazer com o vetor ordenado
+void ordena_vetor() {
+	int trocou, i;
+	t_escola aux;
+	do {*/ /* Bubble sort */
+	/*	trocou = 0;
+		for (i = 0;i < 50; i++) {
+			if (escola[i].habilitacoes_pretendidas < escola[i + 1].habilitacoes_pretendidas) {
+				aux = escola[i];
+				escola[i] = escola[i + 1];
+				escola[i+1] = aux;
+				trocou = 1;
+			}
+		}
+	} while (trocou == 1);
+}
+	*/				
+			
+						
+								
+
 int main(){
-	leitura_arquivo();
+	Fazer_grafo();
+	Inicilizar_Flags();
+	emparelhamento();
+	escreve_teste();
+	escreve_resultado();
+	return 0;
 }
